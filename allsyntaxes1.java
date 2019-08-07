@@ -35,7 +35,11 @@ FileInputStream in = null;
          while ((c = in.read()) != -1) {
             out.write(c);
          }
-      }finally {
+      }
+   catch (ArrayIndexOutOfBoundsException e) {
+         System.out.println("Exception thrown  :" + e);
+      }
+   finally {
          if (in != null) {
             in.close();
          }
